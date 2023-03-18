@@ -1,0 +1,9 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/varible.scss';
+.G-animation-page{
+    @include flex(100%,space-between);
+    margin-bottom: 3rem;
+    @include screen(769px){
+        justify-content: center;
+    }
+}

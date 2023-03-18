@@ -1,0 +1,96 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/varible.scss';
+.G-anim-box{
+    flex: 0 0 48%;
+    position: relative;
+    overflow: hidden;
+    @include screen(769px){
+        flex-basis: 90%;
+        margin-bottom: 1rem;
+    }
+    .G-anim-img{
+        width: 100%;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+    .G-anim-text{
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 50px;
+        color: $bg-color;
+        font-family: 'Source Serif Pro';
+        padding: 0 20%;
+        transition: all .4s linear;
+        .G-data-name{
+            font-weight: 700;
+            font-size: 1.875rem;
+            @include screen(569px){
+                font-size: 1.375rem;
+            }
+        }
+
+    }
+    .G-anim-hover{
+        @include flex(100%,center);
+        align-items: center;
+        height: 100%;
+        background: $bg2-color;
+        position: absolute;
+        color: $bg-color;
+        top: 0;left: 0;
+        text-align: center;
+        font-family: 'Source Serif Pro';
+        transform-origin: 0 0 ;
+        transform: translateY(101%);
+        transition: all 0.3s linear;
+
+        div{
+            width: 100%;
+            padding: 0 10%;
+            h1{
+                transition: all .3s linear;
+                @include screen(400px){
+                    font-size: 1rem;
+                }
+            }
+            img{
+                width: 50%;
+                margin: 1rem 0;
+            }
+            p{
+                color: $t-color;
+                margin-bottom: 0.5rem;
+                @include screen(400px){
+                    font-size: 0.75rem;
+                }
+            }
+            .G-underline-text{
+                padding-bottom: 0.125rem;
+                border-bottom: 1px solid $bg-color;
+                @include screen(400px){
+                    font-size: 0.75rem;
+                }
+                cursor: pointer;
+                .icon-chevron-up{
+                    margin-left: 0.3rem;
+                    display: inline-block;
+                    transform: rotate(30deg);
+                    display: none;
+                    transition: display .3s linear;
+                }
+                &:hover .icon-chevron-up{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    &:hover .G-anim-text{
+        transform:scale(0.5);
+    }
+    &:hover .G-anim-hover{
+        transform: translateY(0);
+    }
+}

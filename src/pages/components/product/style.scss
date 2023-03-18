@@ -1,0 +1,51 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/varible.scss';
+.G-figure-box{
+    flex: 0 0 31.33%;
+    margin: 0 1%;
+    margin-bottom: 2rem;
+    min-height: 500px;
+    text-align-last: left;
+    font-family: 'Sono';
+    @include screen(1024px){
+        flex-basis: 48%;
+    }
+    @include screen(569px){
+        flex-basis: 100%;
+    }
+    .G-figure-img{
+        width: 100%;
+    }
+    .G-figcaption{
+        width: 100%;
+        text-align-last: left;
+    }
+    .figcaption-hobby{
+        color: $p-color;
+        font-weight: 700;
+        font-size: 0.813rem;
+        margin: 1rem 0;
+    }
+    .figcaption-name{
+        font-weight: 700;
+        font-size: 1.375rem;
+    }
+    .figcaption-data{
+        font-weight: 700;
+        font-size: 0.75rem;
+        margin: 1rem 0;
+        span{
+            color: $sp-color;
+        }
+    }
+    .figcaption-about{
+        color: $fg-color;
+        font-weight: 400;
+        font-size: 0.875rem;
+        .product-about-len{
+            color: $p2-color;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

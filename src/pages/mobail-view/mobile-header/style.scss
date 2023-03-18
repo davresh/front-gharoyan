@@ -1,0 +1,98 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/varible.scss';
+.M-header-logotype{
+    height: 60px;
+    @include flex(100%,space-between);
+    align-items: center;
+    .icon-bars-solid{
+        font-size: 1.875rem;
+        cursor: pointer;
+        @include screen(400px){
+            font-size: 1.5rem;
+        }
+    }
+    .M-header-text{
+        font-family: 'Bungee Shade';
+    }
+    .icon-magnifying{
+        font-size: 1.75rem;
+        cursor: pointer;
+        @include screen(400px){
+            font-size: 1.3rem;
+        }
+    }
+    .M-header-nav{
+        @include flex(100%,flex-start);
+        height: 100vh;
+        position: fixed;
+        z-index: 100;
+        background: $bg-menu;
+        top: 0;left:0;
+        opacity: 0;
+        z-index: -1;
+        transition: all .8s ;
+        .M-header-list{
+            @include flex(320px,flex-start);
+            height: 100%;
+            padding: 0 1rem;
+            align-content: start;
+            background-color: $bg-color;
+            transform: translateX(-100%);
+            transition: all .8s ;
+        }
+        .M-menu-anim{
+            transform: translateX(0);
+        }
+    }
+
+    .M-nav-visible{
+        z-index: 0;
+        opacity: 1;
+    }
+}
+.M-list-li{
+    @include flex(100%,initial);height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid $b-color;
+    align-items: center;
+    list-style-type: none;
+    font-family: 'Sono';
+    cursor: pointer;
+    transition: all .5s linear;
+    overflow: hidden;
+    span{
+        display: block;
+        margin-left: 0.3rem;
+        font-size: 0.875rem;
+    }
+}
+.M-list-head{
+    height: 60px;
+    justify-content: space-between;
+    font-family: 'Bungee Shade' !important;
+    font-size: 1.125rem;
+    .icon-cross{
+        display: flex;
+        font-size: 1.56rem;
+        font-weight: 100;
+        cursor: pointer;
+    }
+}
+.M-down-list-1{
+    &:hover{
+        height: 245px;
+    }
+}
+.M-list-down{
+    @include flex(100%,flex-start);
+    height: 205px;
+    .M-list-down-li{
+        @include flex(100%,initial);
+        align-items: center;
+        transition: all .3s linear;
+        &:hover{
+            color: $b2-color;
+            padding-left: 0.438rem;
+        }
+    }
+}
